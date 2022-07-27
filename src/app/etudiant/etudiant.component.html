@@ -1,0 +1,9 @@
+ <div class="enfant">
+ Nom: {{NomEtudiant}}
+ <br/>
+ Question de mon  prof: {{QuestiondeMonEnseignant}}
+ <br/>
+ <input type="text" class="form-control" (input)="ReponseSaisie=$event.target.value">
+ <br/>
+ <button type="button"  (click)="addReponse()" class="btn btn-primary">Envoyer reponse</button>
+</div>

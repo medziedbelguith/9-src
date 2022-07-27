@@ -1,0 +1,70 @@
+<h2> ngStyle </h2>
+<p>Nom patient = {{NomPatient}}</p>
+<span class="badge" [ngStyle]="{backgroundColor:CouleurSante }">
+  {{EtatSante}} </span>
+
+<hr />
+<h2> ngClass</h2>
+<h3>Forme d'utilisation N°1:</h3>
+<span class="badge" ngClass="assurance">
+  {{IsAssure}} </span>
+
+<h3>Forme d'utilisation N°2:</h3>
+<span class="badge" [ngClass]="['assurance', 'border']">
+  {{IsAssure}} </span>
+
+<h3>Forme d'utilisation N°3:</h3>
+<span class="badge border" [ngClass]="{assurance: IsAssure }">
+  {{MessageAssurance}} </span>
+<hr />
+
+
+<h2>*ngIF</h2>
+
+IsAssure: {{IsAssure}}
+<p *ngIf="IsAssure"> Ce malade est assuré.</p>
+<br>
+<br>
+
+
+<h3>Avec Else</h3>
+IsAssure: {{IsAssure}}
+<p *ngIf="IsAssure; else nonAssure"> Ce malade est assuré.</p>
+<ng-template #nonAssure>
+  <p>Ce malade n'est pas assuré !</p>
+</ng-template>
+<hr>
+<br>
+<br>
+
+<h3>Exemple: *ngFor</h3>
+Veuillez entrer les traitements pour ce patient:
+<input type="text"  
+        [(ngModel)]="NomTraitement" 
+        class="form-control">
+<br>
+<button  on-click="ajouterTraitement()" 
+         class="btn btn-primary">Ajouter traitement</button>
+<br>Liste des traitements: 
+
+<ul *ngFor="let trt of traitements">
+  <li> {{trt}} </li>
+</ul>
+<hr>
+
+<h3>*ngSwitch Directive</h3>
+<ul [ngSwitch]="NomPatient">
+  <li *ngSwitchCase="'Amira'">Bonjour Amira</li>
+  <li *ngSwitchCase="'Alex'">Bonjour Alex,</li>
+  <li *ngSwitchCase="'Martine'">Bonjour Martine</li>
+  <li *ngSwitchDefault>Bonjour patient inconnu.</li>
+</ul>  
+
+<span>Après consultation, vous avez:</span>
+<div [ngSwitch]="patientMaladie">
+  <b *ngSwitchCase="mEnum.Abdomaine">Des problèmes d'abdomaine.</b>
+  <b *ngSwitchCase="mEnum.Respiration">Des problèmes de respiration </b>
+  <b *ngSwitchCase="mEnum.Grippe">une grippe</b>
+  <b *ngSwitchCase="mEnum.Infection">une infection.</b>
+  <b *ngSwitchDefault>Rien.</b>
+  </div>

@@ -1,0 +1,19 @@
+ 
+
+
+<div>
+  <h3>Bonjour je suis l'enseignat: <b>{{NomEnseignant}}</b></h3>
+  Question que j'ai posé à l'etudiant: {{Question}}
+  <br /><br />
+
+  <app-etudiant [QuestiondeMonEnseignant]="Question" (ReponseEvent) = "saveData($event)"></app-etudiant>
+
+  <br /><br /><br /><br />
+  La bonne reponse attendue: {{bonneReponse}}
+  <br>
+  La reponse de l'etudiant: {{ReponseEtudiant}}
+  <br>
+  Est elle une bonne réponse: {{IsBonneReponse}}
+</div>  
+ 
+ 

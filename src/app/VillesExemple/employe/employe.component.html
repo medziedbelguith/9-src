@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+
+
+Nom: {{NomEmploye}}
+<br/>
+ Date d'entrée:  {{DateEntree}}
+ <br/> 
+Competences et technologies:{{Technologies}} 
+
+<adresse style="background-color: coral; display: block"  >
+  <ville villeId="1" villeName='Marseille' *ngIf="homeTown"></ville>
+  <ville villeId="2" villeName="Paris" *ngIf="!homeTown"></ville>
+</adresse> 
+<br/>
+<button class="btn btn-primary" 
+        (click)="onChangeCity()">Changer lieu de Travail</button>

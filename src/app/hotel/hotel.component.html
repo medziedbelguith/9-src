@@ -1,0 +1,55 @@
+
+  
+<h2> PropertyBinding</h2>
+<p>Le nom de l'hotel est: </p><p [innerHTML]="hotelName"></p> 
+<hr/>
+
+
+<h2>Event Binding</h2> 
+<h3> {{hotelName}}</h3>
+<p>{{Message}} </p>
+<button [disabled]="Isreserved" 
+        on-click="OnReserver()" 
+        class="btn btn-info"> Reserver</button>
+<hr/>
+
+<h2>$event</h2>
+<h5>Veuillez saisir votre nom:</h5>
+<input type="text" 
+        class="form-control"
+        (input)="OnEcrirNom($event)" />
+Vous avez tapez: {{NomClient}}
+<hr/> 
+
+<h2> Binding Bidirectionnel [(ngModel)]</h2>
+<p>Cet input utilise ngModel: 
+        <input 
+        class="form-control"
+        type="text" 
+        [(ngModel)]="nombrePersonnes"/>
+    </p>
+
+ <p> Nombre des Personnes: {{nombrePersonnes}}</p>
+ <hr/>
+
+
+ <h2> ClassBinding</h2>
+ <div [class.my-class]="isClassVisible">
+        Vous pouvez changer la couleur de ce Div 
+        en cliquant sur le boutons !
+    </div>
+     <button     class="btn btn-warning" 
+                 (click)="isClassVisible = !isClassVisible;">
+                            Cahanger le style</button>
+<hr/>
+
+<h2> StyleBinding</h2>
+<p [style.font-size.em]="isFontBig ? 2 : 1" >Vous pouvez changer le font</p>
+ <button class="btn btn-danger " 
+         (click)="isFontBig = !isFontBig;">
+               Cahnger la largeur du font</button>
+
+              
+              
+ <br/><br/><br/><br/><br/><br/>
+
